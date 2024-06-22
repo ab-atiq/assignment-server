@@ -103,7 +103,7 @@ async function run() {
 
     app.get("/user/get/:id", async (req, res) => {
       const id = req.params.id;
-      console.log(id);
+      // console.log(id);
       const result = await userCollection.findOne({ _id: new ObjectId(id) });
       res.send(result);
     });
