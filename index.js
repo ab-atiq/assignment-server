@@ -4,7 +4,7 @@ const app = express();
 const jwt = require("jsonwebtoken");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const cors = require("cors");
-const port = process.env.PORT || 500;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -31,7 +31,7 @@ function verifyToken(req, res, next) {
 }
 
 const uri =
-  "mongodb+srv://atiqurrahmancse12:OlHmlNtIDqQQoQjV@stride.bidcgoc.mongodb.net/?retryWrites=true&w=majority&appName=stride";
+  "mongodb+srv://atiqurrahmancse12:OlHmlNtIDqQQoQjV@stride.bidcgoc.mongodb.net/stride?retryWrites=true&w=majority&appName=stride";
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -126,7 +126,10 @@ async function run() {
     });
 
     console.log("Database is connected");
+  } catch {
+    console.log("Database is not connected");
   } finally {
+    console.log("Database is work well");
   }
 }
 run().catch(console.dir);
