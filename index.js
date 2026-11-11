@@ -30,8 +30,7 @@ function verifyToken(req, res, next) {
   next();
 }
 
-const uri =
-  "mongodb+srv://atiqurrahmancse12:OlHmlNtIDqQQoQjV@stride.bidcgoc.mongodb.net/stride?retryWrites=true&w=majority&appName=stride";
+const uri = "URL";
 
 const client = new MongoClient(uri, {
   serverApi: {
